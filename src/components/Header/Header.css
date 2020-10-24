@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.mainContainer{
+  height: 88px;
+  max-width: 100%;
+  background-color: #2745A9;
+  display: flex;
+  justify-content: space-between;
+}
+.leftContainer{
+max-height: fit-content;
+display: flex;
+align-items: center;
+}
+.rightContainer{
+  max-height: fit-content;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.icons {
+  color: white;
+  margin-right: 3px;
+  height: 20px;
+  width: 20px;
+  }
+  .bar {
+    color: white;
+    font-size: 18px;
+  }
+  .divButton{
+    display: flex;
+    align-items: center;
+  }

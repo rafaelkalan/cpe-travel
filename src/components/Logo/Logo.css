@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+.logo {
+  color: white;
+  width: 45px;
+  height: 45px;
+  margin: 0px 20px 0px 20px;
+}
+.textLogo {
+  color: white;
+  margin-right: 100px;
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+}
