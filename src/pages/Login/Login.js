@@ -7,7 +7,7 @@ function Login() {
   return (
     <div>
       <h1>Login</h1>
-      <button type="button" onClick={() => history.goBack()}>Voltar</button>
+      <button type="button" onClick={() => history.push('/home')}>Voltar</button>
     </div>
   );
 }
