@@ -1,0 +1,9 @@
+.containerLogin{
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+    background-image: url(../../assets/img/Icones/novofundo_login.png);
+    background-size: cover;
+}
