@@ -1,47 +1,49 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import {Form, Button} from "react-bootstrap";
-import "./Register.css";
+import { Form, Button } from 'react-bootstrap';
+import './Register.css';
 
 function Register() {
   const history = useHistory();
 
+  const input = [
+    { controlId: 'email', type: 'email', placeholder: 'Digite o seu email' },
+    { controlId: 'email2', type: 'email', placeholder: 'Confirme o seu email' },
+    { controlId: 'senha', type: 'password', placeholder: 'Digite a sua senha' },
+    { controlId: 'senha2', type: 'password', placeholder: 'Confirme a sua senha' }];
+
   return (
-    <div className="base">
-          <div className="container">
-            <div>
-              <img src="/img/icones/completo_azul.png" alt="CP&Travel"/>
-              <h2>Vamos começar?</h2>
-              <br/>
-              <p className="subtitle">Crie uma conta para utilizar os nossos serviços com facilidade</p>
-              <Form className ="inputs">
-                
+    <div className="containerRegister">
+      <div className="container">
+        <div className="containerFormulario">
+          <img src="/img/Icones/logoAzul.png" alt="CP&Travel" />
+          <h2 className="title">Vamos começar?</h2>
+          <p className="subtitle">
+            Crie uma conta para utilizar os nossos serviços com facilidade
+          </p>
+          <Form>
+            {input.map((item) => (
+              <Form.Group controlId={item.controlId}>
+                <Form.Control type={item.type} placeholder={item.placeholder} />
+              </Form.Group>
 
-                <Form.Group controlId="email">
-                  <Form.Control type="email" placeholder="Digite o seu email" />
-                </Form.Group>
-                <Form.Group controlId="email2">
-                  <Form.Control type="email" placeholder="Digite o seu email novamente" />
-                </Form.Group>
-                <Form.Group controlId="senha">
-                  <Form.Control type="password" placeholder="Digite a sua senha" />
-                </Form.Group>
-                <Form.Group controlId="senha2">
-                  <Form.Control type="password" placeholder="Digite a sua senha novamente" />
-                </Form.Group>
-
-                <p>Ao se cadastrar, você aceita os Termos de Serviço e a Política de Privacidade</p>
-                <Button variant="primary">Próximo</Button>{' '}
-                <br/><br/>
-                <p>Já tem uma conta?</p>
-                <Button variant="link">Logar</Button>
-
-              </Form>
-
-              <button type="button" onClick={() => history.goBack()}>Voltar</button>
+            ))}
+            <p>
+              Ao se cadastrar, você aceita os Termos de Serviço e a Política de
+              Privacidade
+            </p>
+            <Button variant="primary">Próximo</Button>
+            {' '}
+            <div className="fundocontainer">
+              <p className="linkLogin">Já tem uma conta?</p>
+              <Button variant="link" onClick={() => history.push('/login')}>
+                Logar
+              </Button>
             </div>
-          </div>
+          </Form>
         </div>
+      </div>
+    </div>
   );
 }
 
