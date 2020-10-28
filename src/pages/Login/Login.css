@@ -44,4 +44,13 @@ h2 {
 
 p{
     font-size: x-small;
+.containerLogin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-image: url(../../assets/img/Icones/finalfundo_login.png);
+    background-size: cover;
+    
 }
