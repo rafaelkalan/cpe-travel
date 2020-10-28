@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;   /* PROVISORIO */
+    align-items: center;
+    flex-grow: 1;
+}
+
+.base {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.inputs {
+    text-align: center;
+    /*
+    margin-left: 16px;
+    margin-right: 16px;
+    */
+}
+
+.subtitle{
+    font-size: smaller;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+p{
+    font-size: x-small;
+}
