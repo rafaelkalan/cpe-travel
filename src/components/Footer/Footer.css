@@ -1,0 +1,24 @@
+
+* {
+    margin: 0;
+  }
+  html, body {
+    height: 30%;
+  }
+  .body-content {
+    min-height: 100%;
+    /* igual ao footer height */
+    margin-bottom: 50px; 
+  }
+  .body-content:after {
+    content: "";
+    display: block;
+  }
+  .site-footer, .page-wrap:after { 
+    height: 50px; 
+    padding: 10%;
+
+  }
+  .site-footer {
+background: red  }
+
