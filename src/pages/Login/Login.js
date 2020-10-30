@@ -36,7 +36,7 @@ function Login() {
               <Button variant="link" onClick={() => history.push('/cadastro')}>Cadastre-se</Button>
             </div>
           </Form>
-        </div>
+                  </div>
       </div>
     </div>
   );
