@@ -1,46 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'infinite-react-carousel';
-import RioDeJaneiro from '../../assets/img/Pontos_Turisticos/rj.png';
-import Salvador from '../../assets/img/Pontos_Turisticos/pelourinho.png';
-import Olinda from '../../assets/img/Pontos_Turisticos/olinda_certa.png';
-import Amsterdam from '../../assets/img/Pontos_Turisticos/amsterdam_certa.png';
-import Paris from '../../assets/img/Pontos_Turisticos/paris_certa.png';
-import Porto from '../../assets/img/Pontos_Turisticos/porto_certa.png';
-import NY from '../../assets/img/Pontos_Turisticos/ny.png';
-import PhiPhi from '../../assets/img/Pontos_Turisticos/phiphi.png';
-import MLake from '../../assets/img/Pontos_Turisticos/mlake.png';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { images } from './images';
+import './Carousel.css';
 
 function Carousel() {
+  const [show, setShow] = useState('hidden');
+  const getNextArrowIcon = () => (
+    <div
+      className="divNextArrow"
+      onMouseOver={() => (setShow('visible'))}
+      onMouseOut={() => (setShow('hidden'))}
+      style={{ width: '50%', display: 'flex', justifyContent: 'flex-start' }}
+
+    >
+      <IoIosArrowBack
+        style={{ visibility: show }}
+        className="arrows"
+      />
+    </div>
+  );
+  const getPrevArrowIcon = () => (
+    <div
+      className="divPrevArrow"
+      onMouseOver={() => (setShow('visible'))}
+      onMouseOut={() => (setShow('hidden'))}
+      style={{ width: '50%', display: 'flex', justifyContent: 'flex-end' }}
+
+    >
+      <IoIosArrowForward
+        style={{ visibility: show }}
+        className="arrows"
+      />
+    </div>
+
+  );
   return (
-    <Slider autoplay>
-      <div>
-        <img src={RioDeJaneiro} alt="RioDeJaneiro" />
-      </div>
-      <div>
-        <img src={Salvador} alt="Salvador" />
-      </div>
-      <div>
-        <img src={Olinda} alt="Salvador" />
-      </div>
-      <div>
-        <img src={Amsterdam} alt="Salvador" />
-      </div>
-      <div>
-        <img src={NY} alt="Salvador" />
-      </div>
-      <div>
-        <img src={Paris} alt="Salvador" />
-      </div>
-      <div>
-        <img src={Porto} alt="Salvador" />
-      </div>
-      <div>
-        <img src={PhiPhi} alt="Salvador" />
-      </div>
-      <div>
-        <img src={MLake} alt="Salvador" />
-      </div>
-    </Slider>
+    <div className="box">
+      <Slider
+        autoplay
+        prevArrow={getNextArrowIcon()}
+        nextArrow={getPrevArrowIcon()}
+      >
+        {
+          images.map((fotos) => (
+            <div
+              key={fotos.title}
+            >
+              <img className="image" src={fotos.image} alt={fotos.title} />
+            </div>
+          ))
+        }
+      </Slider>
+    </div>
   );
 }
 
