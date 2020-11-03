@@ -1,12 +1,12 @@
-.box {
+.boxCarousel {
   width: 1366px;
   height: auto;
 }
-.image {
+.imageCarousel {
   max-width: 100%;
   height: auto;
 }
-.arrows {
+.arrowsCarousel {
   color: white;
   opacity: 75%;
   height: 70px;

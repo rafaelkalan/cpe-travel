@@ -12,11 +12,10 @@ function Carousel() {
       onMouseOver={() => (setShow('visible'))}
       onMouseOut={() => (setShow('hidden'))}
       style={{ width: '50%', display: 'flex', justifyContent: 'flex-start' }}
-
     >
       <IoIosArrowBack
         style={{ visibility: show }}
-        className="arrows"
+        className="arrowsCarousel"
       />
     </div>
   );
@@ -26,19 +25,18 @@ function Carousel() {
       onMouseOver={() => (setShow('visible'))}
       onMouseOut={() => (setShow('hidden'))}
       style={{ width: '50%', display: 'flex', justifyContent: 'flex-end' }}
-
     >
       <IoIosArrowForward
         style={{ visibility: show }}
-        className="arrows"
+        className="arrowsCarousel"
       />
     </div>
 
   );
   return (
-    <div className="box">
+    <div className="boxCarousel">
       <Slider
-        autoplay
+       // autoplay
         prevArrow={getNextArrowIcon()}
         nextArrow={getPrevArrowIcon()}
       >
@@ -47,7 +45,7 @@ function Carousel() {
             <div
               key={fotos.title}
             >
-              <img className="image" src={fotos.image} alt={fotos.title} />
+              <img className="imageCarousel" src={fotos.image} alt={fotos.title} />
             </div>
           ))
         }
