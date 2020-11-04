@@ -1,48 +1,38 @@
-import RioDeJaneiro from '../../assets/img/rjjj.png';
-import Salvador from '../../assets/img/pelourinhooo.png';
-import Olinda from '../../assets/img/olindaaa.png';
-import Amsterdam from '../../assets/img/amsterdammm.png';
-import Paris from '../../assets/img/parisss.png';
-import Porto from '../../assets/img/portooo.png';
-import NY from '../../assets/img/nyyy.png';
-import PhiPhi from '../../assets/img/phiphiii.png';
-import MLake from '../../assets/img/mlakeee.png';
-
 export const images = [
   {
-    image: RioDeJaneiro,
+    image: '/img/Pontos_Turisticos/rj.png',
     title: 'RioDeJaneiro',
   },
   {
-    image: Salvador,
+    image: '/img/Pontos_Turisticos/pelourinho.png',
     title: 'Salvador',
   },
   {
-    image: Olinda,
+    image: '/img/Pontos_Turisticos/olinda_certa.png',
     title: 'Olinda',
   },
   {
-    image: Amsterdam,
+    image: '/img/Pontos_Turisticos/amsterdam_certa.png',
     title: 'Amsterdam',
   },
   {
-    image: Paris,
+    image: '/img/Pontos_Turisticos/paris_certa.png',
     title: 'Paris',
   },
   {
-    image: Porto,
+    image: '/img/Pontos_Turisticos/porto_certa.png',
     title: 'Porto',
   },
   {
-    image: NY,
+    image: '/img/Pontos_Turisticos/ny.png',
     title: 'NovaYork',
   },
   {
-    image: PhiPhi,
+    image: '/img/Pontos_Turisticos/phiphi.png',
     title: 'IPhiPhi',
   },
   {
-    image: MLake,
+    image: '/img/Pontos_Turisticos/mlake.png',
     title: 'MLake',
   },
 ];

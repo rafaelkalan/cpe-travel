@@ -1,57 +1,47 @@
 import React, { useState } from 'react';
-import Slider from 'infinite-react-carousel';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import Carousel from 'react-bootstrap/Carousel';
 import { images } from './images';
 import './Carousel.css';
 
-function Carousel() {
+function SliderCarousel() {
   const [show, setShow] = useState('hidden');
-  const getNextArrowIcon = () => (
-    <div
-      className="divNextArrow"
-      onMouseOver={() => (setShow('visible'))}
-      onMouseOut={() => (setShow('hidden'))}
-      style={{ width: '50%', display: 'flex', justifyContent: 'flex-start' }}
-    >
+  const getPrevArrowIcon = () => (
+    <div className="divPrevArrow">
       <IoIosArrowBack
         style={{ visibility: show }}
         className="arrowsCarousel"
       />
     </div>
   );
-  const getPrevArrowIcon = () => (
-    <div
-      className="divPrevArrow"
-      onMouseOver={() => (setShow('visible'))}
-      onMouseOut={() => (setShow('hidden'))}
-      style={{ width: '50%', display: 'flex', justifyContent: 'flex-end' }}
-    >
+  const getNextArrowIcon = () => (
+    <div className="divNextArrow">
       <IoIosArrowForward
         style={{ visibility: show }}
         className="arrowsCarousel"
       />
     </div>
-
   );
   return (
-    <div className="boxCarousel">
-      <Slider
-       // autoplay
-        prevArrow={getNextArrowIcon()}
-        nextArrow={getPrevArrowIcon()}
-      >
-        {
-          images.map((fotos) => (
-            <div
-              key={fotos.title}
-            >
-              <img className="imageCarousel" src={fotos.image} alt={fotos.title} />
-            </div>
-          ))
-        }
-      </Slider>
-    </div>
+    <Carousel
+      indicators={false}
+      nextIcon={getNextArrowIcon()}
+      prevIcon={getPrevArrowIcon()}
+      onMouseOver={() => (setShow('visible'))}
+      onMouseOut={() => (setShow('hidden'))}
+    >
+      {
+        images.map((fotos) => (
+          <Carousel.Item
+            key={fotos.title}
+            interval={3000}
+          >
+            <img className="imageCarousel" src={fotos.image} alt={fotos.title} />
+          </Carousel.Item>
+        ))
+      }
+    </Carousel>
   );
 }
 
-export default Carousel;
+export default SliderCarousel;
