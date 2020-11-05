@@ -8,7 +8,7 @@ function PageButton({ page, children, configMargin }) {
     <Button
       onClick={() => history.push(page)}
       style={{
-        fontSize: '15px', margin: configMargin, color: 'white', fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
+        fontSize: '15px', margin: configMargin, color: 'white', fontFamily: 'inherit', outline: 'none',
       }}
     >
       {children}

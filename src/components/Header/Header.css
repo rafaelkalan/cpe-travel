@@ -26,6 +26,7 @@ align-items: center;
   .bar {
     color: white;
     font-size: 18px;
+    margin: 0px;
   }
   .divButton{
     display: flex;
