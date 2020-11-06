@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-function Input(){
-    return (
-        <div>
-            <input />
-            <br/>
-        </div>
-    );
+function Input() {
+  return (
+    <div>
+      <input />
+      <br />
+    </div>
+  );
 }
 
 export default Input;

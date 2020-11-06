@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
-import Slider from '../../components/Carousel/Carousel';
+import Slider from '../../components/Carousel';
+import Cards from '../../components/Cards';
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Header />
       <Slider />
       <h1>Home</h1>
+      <Cards />
     </>
   );
 }
