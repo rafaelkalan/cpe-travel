@@ -1,4 +1,4 @@
-.container {
+.containerLogo {
   display: flex;
 }
 .logo {
@@ -10,6 +10,7 @@
 .textLogo {
   color: white;
   margin-right: 100px;
+  margin-bottom: 0px;
   font-family: 'Pacifico', cursive;
   font-size: 28px;
 }

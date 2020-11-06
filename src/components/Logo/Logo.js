@@ -4,7 +4,7 @@ import './Logo.css';
 
 function Logo() {
   return (
-    <div className="container">
+    <div className="containerLogo">
       <FaRegPaperPlane className="logo" />
       <p className="textLogo">CP& Travel</p>
     </div>
