@@ -1,0 +1,26 @@
+
+.fundoFooter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.linkRedesocial{
+  margin-top: 557px;
+  font-size: smaller;
+  
+}
+.footerEscopo{
+  text-align: center;
+}
+.linkRedesocial, .page-wrap:after { 
+  height: 15px; 
+  padding: 0%;
+  left: 389px;
+top:2242px;
+width: 662;
+}
+
+
+
