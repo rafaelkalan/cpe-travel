@@ -1,31 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto&display=swap');
 
-.boxSubtitle{
+.boxSubtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 30px;
-    
     font-size: 35px;
     font-family: 'Open Sans';
     color: #274CA9;
 }
-
-
-.linha{
+.linha {
     margin-top: 5px;
     border-bottom: 2.5px #274CA9 solid;
     min-width: 375px;
 }
-
-.boxMessage{
+.boxMessage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     font-family: 'Roboto';
     min-width: 600px;
+    margin-bottom: 15px;
 }
