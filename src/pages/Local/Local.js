@@ -1,11 +1,11 @@
 import React from 'react';
 import "./Local.css";
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer'; 
 import BoxImages from '../../components/BoxImages';
 import BoxText from '../../components/BoxText';
 import BoxInfo from '../../components/BoxInfo';
-import BoxItinerario from '../../components/TitleItinerario'; 
+import BoxItinerario from '../../components/BoxItinerario'; 
 
 
 function Local(){
@@ -20,7 +20,8 @@ function Local(){
         </BoxItinerario>
         <BoxInfo>            
         </BoxInfo>
-        <Footer/>
+        <Footer></Footer>
+       
         </>
     );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../TitleLocal/TitleLocal.css';
+import './TitleItinerario.css';
 
 function TitleItinerario(){
 

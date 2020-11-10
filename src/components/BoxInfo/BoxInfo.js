@@ -1,5 +1,8 @@
 import React from 'react';
 import SpecialInfo from '../SpecialInfoTitle';
+
+
+import Card from 'react-bootstrap/Card';
 import './BoxInfo.css';
 
 function BoxInfo(){
@@ -9,6 +12,7 @@ function BoxInfo(){
             <SpecialInfo></SpecialInfo>
             <img src="/img/Pontos_Turisticos/InfoSalvador.png"></img>
             </div>
+            
         </div>
     );
 
