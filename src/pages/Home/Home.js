@@ -10,9 +10,9 @@ import './Home.css';
 function Home() {
   return (
     <>
-      <Header />
-       <SearchBar/>
-     <Slider />
+      <Header/>
+      <SearchBar/>
+      <Slider/>
       <div className="boxSubtitle">
         <h1>Guia de Destinos</h1>
         <hr className="linha" />
@@ -20,7 +20,7 @@ function Home() {
       <div className="boxMessage">
         <p>Procure as melhores localidades e os preços mais baixos da viagem dos seus sonhos!</p>
       </div>
-<Footer />
+      <Footer />
     </>
   );
 }
