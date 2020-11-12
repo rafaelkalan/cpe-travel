@@ -13,11 +13,6 @@
   margin-top: 30px;
   display: none;
 }
-@media only screen and (max-width: 600px) {
-  .containerBurger {
-    display: block;
-  }
-}
 .containerBurger:hover{
   background-color: rgba(0,0,0,.1);
   border-radius: 5px;
@@ -39,11 +34,6 @@ align-items: center;
   align-items: center;
   margin-right: 3vw;
 }
-@media only screen and (max-width: 600px) {
-  .rightContainer {
-    display: none;
-  }
-}
 .icons {
   color: white;
   margin-right: 3px;
@@ -59,8 +49,25 @@ align-items: center;
     display: flex;
     align-items: center;
 }
-@media only screen and (max-width: 600px) {
+.burgerList {
+  background: #2745A9;
+  height: 100%;
+}
+.burgerListItem:hover {
+  background-color: rgba(0,0,0,.2);
+}
+.burgerText {
+  margin-left: 12px;
+  color: white;
+}
+@media only screen and (max-width: 800px) {
+  .containerBurger {
+    display: block;
+  }
   .divButton {
+    display: none;
+  }
+  .rightContainer {
     display: none;
   }
 }
