@@ -6,8 +6,8 @@ function Input({ input }) {
   return (
     <div>
       {input.map((item) => (
-        <Form.Group controlId={item.controlId} className="Inputslogin" alt="inpt">
-          <Form.Control type={item.type} placeholder={item.placeholder} className="marginForm" alt="formatInput" />
+        <Form.Group controlId={item.controlId} className="formInput" key={item.placeholder} alt="input">
+          <Form.Control size="sm" className="inputLogin" type={item.type} placeholder={item.placeholder} alt="formatInput" />
         </Form.Group>
       ))}
     </div>
