@@ -3,14 +3,12 @@ import Header from '../../components/Header';
 import Slider from '../../components/Carousel';
 import Cards from '../../components/Cards';
 import Footer from '../../components/Footer';
-import SearchBar from '../../components/SearchBar';
 import './Home.css';
 
 function Home() {
   return (
     <>
       <Header />
-      <SearchBar />
       <Slider />
       <div className="boxSubtitle">
         <h1>Guia de Destinos</h1>

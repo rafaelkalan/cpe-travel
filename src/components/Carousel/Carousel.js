@@ -35,7 +35,7 @@ function SliderCarousel() {
         images.map((fotos) => (
           <Carousel.Item
             key={fotos.key}
-            interval={3000}
+            interval={3000000}
           >
             <div className="imageCarousel" style={{ backgroundImage: `url(${fotos.carousel})` }} />
           </Carousel.Item>

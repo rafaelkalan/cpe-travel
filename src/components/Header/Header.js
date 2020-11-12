@@ -1,10 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TiPlaneOutline } from 'react-icons/ti';
-import { BiBed } from 'react-icons/bi';
+import { IconContext } from 'react-icons/lib';
+import { BiBed, BiMenu } from 'react-icons/bi';
 import { RiSuitcaseLine } from 'react-icons/ri';
+import {
+  Drawer, List, ListItem, ListItemText,
+} from '@material-ui/core';
 import Button from '../Button';
 import Logo from '../Logo';
 import './Header.css';
+
+function BurgerMenu() {
+  const [open, setOpen] = useState(false);
+  const headerItens = [
+    {
+      icon: <TiPlaneOutline className="icons" />,
+      path: '/',
+      text: 'Passagens',
+    },
+    {
+      icon: <BiBed className="icons" />,
+      path: '/',
+      text: 'Hotéis',
+    },
+    {
+      icon: <RiSuitcaseLine className="icons" />,
+      path: '/',
+      text: 'Pacotes',
+    },
+  ];
+  return (
+    <div className="containerBurger">
+      <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+        <BiMenu onClick={() => setOpen(true)} />
+      </IconContext.Provider>
+      <Drawer open={open}>
+        <List>
+          {headerItens.map((item) => (
+            <ListItem>
+              <IconContext.Provider value={{ color: 'blue' }}>
+                {item.icon}
+              </IconContext.Provider>
+              <ListItemText>
+                {item.text}
+              </ListItemText>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </div>
+  );
+}
 
 function Header() {
   const headerItens = [
@@ -37,6 +83,7 @@ function Header() {
           </div>
         ))}
       </div>
+      {BurgerMenu()}
       <div className="rightContainer">
         <Button configMargin="0px 5px 0px 0px" page="/cadastro">Cadastre-se</Button>
         <p className="bar">|</p>
