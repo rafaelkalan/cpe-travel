@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Box.css';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import Input from '../input';
+import Input from '../Input';
 
 function Box({
   title, subtitle, nextMessage, nextButton, input,
