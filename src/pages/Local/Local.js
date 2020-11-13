@@ -16,7 +16,7 @@ function Local({local}){
 
     for(var i=0; i<9; i++)
     {
-        if( local === images[i].key){
+        if( local === images[i].key ){
             lugar=images[i];
         }
     }
