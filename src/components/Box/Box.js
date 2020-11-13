@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 import './Box.css';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import Input from '../Input';
+import Input from '../input';
 
-function Box({
+function Box ({
   title, subtitle, nextMessage, nextButton, input,
 }) {
   const history = useHistory();
