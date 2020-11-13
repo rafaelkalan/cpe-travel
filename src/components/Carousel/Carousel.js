@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Carousel from 'react-bootstrap/Carousel';
-import { images } from './images';
+import { images } from '../../constantes/Images';
 import './Carousel.css';
 
 function SliderCarousel() {
@@ -29,14 +29,15 @@ function SliderCarousel() {
       prevIcon={getPrevArrowIcon()}
       onMouseOver={() => (setShow('visible'))}
       onMouseOut={() => (setShow('hidden'))}
+      className="boxCarousel"
     >
       {
         images.map((fotos) => (
           <Carousel.Item
-            key={fotos.title}
-            interval={3000}
+            key={fotos.key}
+            interval={3000000}
           >
-            <img className="imageCarousel" src={fotos.image} alt={fotos.title} />
+            <div className="imageCarousel" style={{ backgroundImage: `url(${fotos.carousel})` }} />
           </Carousel.Item>
         ))
       }

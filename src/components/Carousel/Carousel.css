@@ -1,11 +1,40 @@
 .boxCarousel {
-  width: 1366px;
-  height: auto;
+  width: 100%;
+  height: 366px;
 }
 .imageCarousel {
-  max-width: 100%;
-  height: auto;
+  position: relative;
+  height: 366px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% cover;
+  background-position: center;
 }
+/* .imageCarousel > * {
+  z-index: 10;
+  position: relative;
+}
+.imageCarousel::after,
+.imageCarousel::before {
+content: "";
+display: block;
+margin: auto;
+height: 5%;
+background-image: linear-gradient(0deg, white 0%, transparent 100%);
+position: absolute;
+left: 0;
+right: 0;
+}
+.imageCarousel::before {
+  top: 0px;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+}
+.imageCarousel::after {
+  bottom: 0vh;
+  background: linear-gradient(0deg, white 0%, transparent 100%);
+} */
+
 .arrowsCarousel {
   color: white;
   opacity: 75%;
@@ -13,12 +42,10 @@
   width: 70px;
 }
 .divNextArrow {
-  width: 50%;
   display: flex;
   justify-content: flex-end;
 }
 .divPrevArrow {
-  width: 50%;
   display: flex;
   justify-content: flex-start;
 }
