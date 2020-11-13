@@ -6,12 +6,23 @@ import { Button } from 'react-bootstrap';
 import Input from '../Input';
 
 function Box({
-  title, subtitle, nextMessage, nextButton, input,
+  title, subtitle, nextMessage, nextButton, input, email,funcaoemail,funcaosenha,
 }) {
   const history = useHistory();
   const url = nextButton === 'Cadastrar' ? '/img/Icones/novofundo_login.png' : '/img/Icones/novofundo-cadastro.png';
   const marginNextButton = nextButton === 'Cadastrar' ? '50px' : '0px';
+  
+  function login(){
+    alert("Bem Vindo! \n" + email);
+    history.push("Home");
+    }
 
+    function regis(){
+
+      alert("Insira seus dados novamente para o email cadastrado:\n" + email);
+      history.push("cadastro");
+    }
+    
   return (
     <div className="containerRegister" style={{ backgroundImage: `url(${url})` }}>
       <div className="baseRegister">
@@ -24,12 +35,14 @@ function Box({
           <p className="text">
             {subtitle}
           </p>
-          <Input input={input} />
+          <Input input={input} 
+          funcaosenha={funcaosenha}
+          funcaoemail={funcaoemail}/>
 
           {nextButton === 'Cadastrar'
           && (
           <div className="fundocontainer1" alt="Help">
-            <Button variant="link">Esqueceu a senha?</Button>
+            <Button variant="link" onClick={regis}>Esqueceu a senha?</Button>
           </div>
           )}
 
@@ -41,7 +54,7 @@ function Box({
           )}
 
           <div className="next_button" style={{ marginTop: marginNextButton }}>
-            <Button variant="primary" type="Proximo">
+            <Button variant="primary" type="Proximo" onClick={login}> 
               Próximo
             </Button>
           </div>
