@@ -5,31 +5,46 @@ import { BiArrowBack } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
 import Input from '../input';
 
-function Box ({
-  title, subtitle, nextMessage, nextButton, input,
+
+function Box({
+  title, subtitle, nextMessage, nextButton, input, email,funcaoemail,funcaosenha,
+
 }) {
   const history = useHistory();
-  const marginLogin = nextButton === 'Cadastrar' ? '100px' : '0px';
   const url = nextButton === 'Cadastrar' ? '/img/Icones/novofundo_login.png' : '/img/Icones/novofundo-cadastro.png';
+  const marginNextButton = nextButton === 'Cadastrar' ? '50px' : '0px';
+  
+  function login(){
+    alert("Bem Vindo! \n" + email);
+    history.push("Home");
+    }
 
+    function regis(){
+
+      alert("Insira seus dados novamente para o email cadastrado:\n" + email);
+      history.push("cadastro");
+    }
+    
   return (
     <div className="containerRegister" style={{ backgroundImage: `url(${url})` }}>
       <div className="baseRegister">
         <div className="boxContainer">
           <BiArrowBack className="back_button" type="button" onClick={() => history.push('/home')} />
-          <img src="img/Icones/logoAzul.png" alt="Logo Azul" />
+          <div className="logoAzul" />
         </div>
-        <div style={{ marginTop: marginLogin }}>
+        <div>
           <h2 className="H2title">{title}</h2>
           <p className="text">
             {subtitle}
           </p>
-          <Input input={input} />
+          <Input input={input} 
+          funcaosenha={funcaosenha}
+          funcaoemail={funcaoemail}/>
 
           {nextButton === 'Cadastrar'
           && (
           <div className="fundocontainer1" alt="Help">
-            <Button variant="link">Esqueceu a senha?</Button>
+            <Button variant="link" onClick={regis}>Esqueceu a senha?</Button>
           </div>
           )}
 
@@ -40,8 +55,8 @@ function Box ({
           </p>
           )}
 
-          <div className="next_button">
-            <Button variant="primary" type="Proximo">
+          <div className="next_button" style={{ marginTop: marginNextButton }}>
+            <Button variant="primary" type="Proximo" onClick={login}> 
               Próximo
             </Button>
           </div>

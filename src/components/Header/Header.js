@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { TiPlaneOutline } from 'react-icons/ti';
 import { IconContext } from 'react-icons/lib';
 import { BiBed, BiMenu } from 'react-icons/bi';
 import { RiSuitcaseLine } from 'react-icons/ri';
+import { FiFileText, FiLogIn } from 'react-icons/fi';
 import {
   Drawer, List, ListItem, ListItemText,
 } from '@material-ui/core';
@@ -12,6 +14,7 @@ import './Header.css';
 
 function BurgerMenu() {
   const [open, setOpen] = useState(false);
+  const history = useHistory();
   const headerItens = [
     {
       icon: <TiPlaneOutline className="icons" />,
@@ -28,20 +31,30 @@ function BurgerMenu() {
       path: '/',
       text: 'Pacotes',
     },
+    {
+      icon: <FiFileText className="icons" />,
+      path: '/cadastro',
+      text: 'Cadastro',
+    },
+    {
+      icon: <FiLogIn className="icons" />,
+      path: '/login',
+      text: 'Login',
+    },
   ];
   return (
     <div className="containerBurger">
       <IconContext.Provider value={{ color: 'white', size: '30px' }}>
         <BiMenu onClick={() => setOpen(true)} />
       </IconContext.Provider>
-      <Drawer open={open}>
-        <List>
+      <Drawer open={open} onClose={() => setOpen(false)}>
+        <List className="burgerList">
           {headerItens.map((item) => (
-            <ListItem>
-              <IconContext.Provider value={{ color: 'blue' }}>
+            <ListItem className="burgerListItem" onClick={() => history.push(item.path)} key={`burger-${item.text}`}>
+              <IconContext.Provider value={{ color: 'white' }}>
                 {item.icon}
               </IconContext.Provider>
-              <ListItemText>
+              <ListItemText className="burgerText">
                 {item.text}
               </ListItemText>
             </ListItem>
