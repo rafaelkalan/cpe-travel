@@ -5,12 +5,12 @@ import SpecialInfo from '../SpecialInfoTitle';
 import Card from 'react-bootstrap/Card';
 import './BoxInfo.css';
 
-function BoxInfo(){
+function BoxInfo(props){
     return(
         <div className="englobaTudo">
             <div className="boxInfo">
             <SpecialInfo></SpecialInfo>
-            <img src="/img/Pontos_Turisticos/InfoSalvador.png"></img>
+            <img src={props.inf.info}></img>
             </div>
             
         </div>

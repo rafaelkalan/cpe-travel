@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { images } from '../../constantes/Images';
+
 import './Cards.css';
 
 function Cards({ search }) {
   const [cards, setCards] = useState(images);
+  const history = useHistory();
   useEffect(() => {
     const filterImage = images.filter((obj) => (obj.title.toLowerCase().includes(search)));
     if (filterImage.length !== 0) setCards(filterImage);
@@ -13,7 +16,7 @@ function Cards({ search }) {
     <div className="cardContainer">
       {
         cards.map((card) => (
-          <button key={card.key} type="button" className="cardButton">
+          <button key={card.key} type="button" className="cardButton" onClick={() => (history.push(card.key))}>
             <div className="divCardImage">
               <img src={card.cards} alt={card.key} className="cardImage" />
             </div>
