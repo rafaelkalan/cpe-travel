@@ -4,7 +4,7 @@ import { TiPlaneOutline } from 'react-icons/ti';
 import { IconContext } from 'react-icons/lib';
 import { BiBed, BiMenu } from 'react-icons/bi';
 import { RiSuitcaseLine } from 'react-icons/ri';
-import { FiFileText, FiLogIn } from 'react-icons/fi';
+import { FiFileText, FiLogIn, FiFilePlus } from 'react-icons/fi';
 import {
   Drawer, List, ListItem, ListItemText,
 } from '@material-ui/core';
@@ -41,6 +41,12 @@ function BurgerMenu() {
       path: '/login',
       text: 'Login',
     },
+    {
+      icon: <FiFilePlus className="icons" />,
+      path: '/cadastro-local',
+      text: 'Cadastro de Local',
+    },
+
   ];
   return (
     <div className="containerBurger">
@@ -81,6 +87,11 @@ function Header() {
       icon: <RiSuitcaseLine className="icons" />,
       path: '/',
       text: 'Pacotes',
+    },
+    {
+      icon: <FiFilePlus className="icons" />,
+      path: '/cadastro-local',
+      text: 'Cadastro de Local',
     },
   ];
   const margin = '0px 20px 0px 0px';
