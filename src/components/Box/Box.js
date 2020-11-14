@@ -3,10 +3,12 @@ import { useHistory } from 'react-router-dom';
 import './Box.css';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import Input from '../Input';
+import Input from '../input';
+
 
 function Box({
   title, subtitle, nextMessage, nextButton, input, email,funcaoemail,funcaosenha,
+
 }) {
   const history = useHistory();
   const url = nextButton === 'Cadastrar' ? '/img/Icones/novofundo_login.png' : '/img/Icones/novofundo-cadastro.png';
