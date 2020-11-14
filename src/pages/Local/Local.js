@@ -6,19 +6,31 @@ import BoxImages from '../../components/BoxImages';
 import BoxText from '../../components/BoxText';
 import BoxInfo from '../../components/BoxInfo';
 import BoxItinerario from '../../components/BoxItinerario'; 
+import { images } from '../../constantes/Images';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
-function Local(){
+function Local({local}){
+    
+    var lugar=0;
+
+    for(var i=0; i<9; i++)
+    {
+        if( local === images[i].key ){
+            lugar=images[i];
+        }
+    }
+    
     return(
         <>
         <Header/>
-        <BoxImages>          
+        <BoxImages foto={lugar}>          
         </BoxImages>
-        <BoxText>            
+        <BoxText texto={lugar}>            
         </BoxText>
-        <BoxItinerario>            
+        <BoxItinerario itinerario={lugar}>            
         </BoxItinerario>
-        <BoxInfo>            
+        <BoxInfo inf={lugar}>            
         </BoxInfo>
         <Footer></Footer>
        

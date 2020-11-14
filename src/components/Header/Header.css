@@ -28,6 +28,11 @@ max-height: fit-content;
 display: flex;
 align-items: center;
 }
+.logoButton {
+  background: none;
+  outline: none!important;
+  border: none;
+}
 .rightContainer {
   max-height: fit-content;
   display: flex;

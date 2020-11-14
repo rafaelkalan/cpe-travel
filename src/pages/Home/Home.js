@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Slider from '../../components/Carousel';
 import Cards from '../../components/Cards';
@@ -7,12 +7,16 @@ import SearchBar from '../../components/SearchBar';
 import './Home.css';
 
 function Home() {
+  const [search, setSearch] = useState();
+  const handleChange = (e) => {
+    setSearch(e.target.value.toLowerCase());
+  };
   return (
     <>
       <Header />
       <Slider />
       <div className="searchDiv">
-        <SearchBar />
+        <SearchBar handleChange={handleChange} />
       </div>
       <div className="boxSubtitle">
         <h1>Guia de Destinos</h1>
@@ -23,7 +27,7 @@ function Home() {
           Procure as melhores localidades e os preços mais baixos da viagem dos seus sonhos!
         </div>
       </div>
-      <Cards />
+      <Cards search={search} />
       <Footer />
     </>
   );
