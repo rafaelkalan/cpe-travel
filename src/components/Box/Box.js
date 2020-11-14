@@ -3,28 +3,26 @@ import { useHistory } from 'react-router-dom';
 import './Box.css';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
-import Input from '../input';
-
+import Input from '../Input';
 
 function Box({
-  title, subtitle, nextMessage, nextButton, input, email,funcaoemail,funcaosenha,
+  title, subtitle, nextMessage, nextButton, input, email, funcaoemail, funcaosenha,
 
 }) {
   const history = useHistory();
   const url = nextButton === 'Cadastrar' ? '/img/Icones/novofundo_login.png' : '/img/Icones/novofundo-cadastro.png';
   const marginNextButton = nextButton === 'Cadastrar' ? '50px' : '0px';
-  
-  function login(){
-    alert("Bem Vindo! \n" + email);
-    history.push("Home");
-    }
 
-    function regis(){
+  function login() {
+    alert(`Bem Vindo! \n${email}`);
+    history.push('Home');
+  }
 
-      alert("Insira seus dados novamente para o email cadastrado:\n" + email);
-      history.push("cadastro");
-    }
-    
+  function regis() {
+    alert(`Insira seus dados novamente para o email cadastrado:\n${email}`);
+    history.push('cadastro');
+  }
+
   return (
     <div className="containerRegister" style={{ backgroundImage: `url(${url})` }}>
       <div className="baseRegister">
@@ -37,9 +35,11 @@ function Box({
           <p className="text">
             {subtitle}
           </p>
-          <Input input={input} 
-          funcaosenha={funcaosenha}
-          funcaoemail={funcaoemail}/>
+          <Input
+            input={input}
+            funcaosenha={funcaosenha}
+            funcaoemail={funcaoemail}
+          />
 
           {nextButton === 'Cadastrar'
           && (
@@ -56,7 +56,7 @@ function Box({
           )}
 
           <div className="next_button" style={{ marginTop: marginNextButton }}>
-            <Button variant="primary" type="Proximo" onClick={login}> 
+            <Button variant="primary" type="Proximo" onClick={login}>
               Próximo
             </Button>
           </div>

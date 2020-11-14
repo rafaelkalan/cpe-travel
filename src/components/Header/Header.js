@@ -84,11 +84,14 @@ function Header() {
     },
   ];
   const margin = '0px 20px 0px 0px';
+  const history = useHistory();
 
   return (
     <div className="mainContainer">
       <div className="leftContainer">
-        <Logo />
+        <button className="logoButton" type="button" onClick={() => history.push('/')}>
+          <Logo />
+        </button>
         {headerItens.map((item) => (
           <div className="divButton" key={item.text}>
             {item.icon}

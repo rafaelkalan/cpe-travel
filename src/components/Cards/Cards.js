@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { images } from '../../constantes/Images';
-import { useHistory } from "react-router-dom";
-import Local from '../../pages/Local/Local';
 
 import './Cards.css';
 
-function Cards() {
-  const history= useHistory();
-  
+function Cards({ search }) {
+  const [cards, setCards] = useState(images);
+  const history = useHistory();
+  useEffect(() => {
+    const filterImage = images.filter((obj) => (obj.title.toLowerCase().includes(search)));
+    if (filterImage.length !== 0) setCards(filterImage);
+    else setCards(images);
+  }, [search]);
   return (
     <div className="cardContainer">
       {
-        images.map((card) => (
-          <button key={card.key} type="button" className="cardButton" onClick={ (props) => (history.push(card.key)) } >
+        cards.map((card) => (
+          <button key={card.key} type="button" className="cardButton" onClick={() => (history.push(card.key))}>
             <div className="divCardImage">
               <img src={card.cards} alt={card.key} className="cardImage" />
             </div>
