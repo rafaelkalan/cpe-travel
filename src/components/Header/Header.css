@@ -30,7 +30,7 @@ align-items: center;
 }
 .logoButton {
   background: none;
-  outline: none;
+  outline: none!important;
   border: none;
 }
 .rightContainer {
