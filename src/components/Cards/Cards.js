@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { images } from '../../constantes/Images';
 import './Cards.css';
 
-function Cards() {
+function Cards({ search }) {
+  const [cards, setCards] = useState(images);
+  useEffect(() => {
+    const filterImage = images.filter((obj) => (obj.title.toLowerCase().includes(search)));
+    if (filterImage.length !== 0) setCards(filterImage);
+    else setCards(images);
+  }, [search]);
   return (
     <div className="cardContainer">
       {
-        images.map((card) => (
+        cards.map((card) => (
           <button key={card.key} type="button" className="cardButton">
             <div className="divCardImage">
               <img src={card.cards} alt={card.key} className="cardImage" />
