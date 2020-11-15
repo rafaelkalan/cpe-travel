@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { images } from '../../constantes/Images';
-
+import { initialImages } from '../../constantes/Images';
 import './Cards.css';
 
-function Cards({ search }) {
+function Cards({ search, images }) {
   const [cards, setCards] = useState(images);
+
   const history = useHistory();
+
   useEffect(() => {
     const filterImage = images.filter((obj) => (obj.title.toLowerCase().includes(search)));
     if (filterImage.length !== 0) setCards(filterImage);
-    else setCards(images);
+    else setCards(initialImages);
   }, [search]);
+
   return (
     <div className="cardContainer">
       {

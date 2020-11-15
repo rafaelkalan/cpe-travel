@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Carousel from 'react-bootstrap/Carousel';
-import { images } from '../../constantes/Images';
+
 import './Carousel.css';
 
-function SliderCarousel() {
+function SliderCarousel({ images }) {
   const [show, setShow] = useState('hidden');
+
   const getPrevArrowIcon = () => (
     <div className="divPrevArrow">
       <IoIosArrowBack
