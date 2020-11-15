@@ -3,11 +3,10 @@
   height: 366px;
 }
 .imageCarousel {
-  position: relative;
   height: 366px;
   position: relative;
   background-repeat: no-repeat;
-  background-size: 100% cover;
+  background-size: cover;
   background-position: center;
 }
 /* .imageCarousel > * {
