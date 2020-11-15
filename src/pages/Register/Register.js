@@ -6,7 +6,6 @@ function Register() {
   const [email, setEmail] = useState();
   const [password, setPassord] = useState();
   const handleChangeemail = (e) =>setEmail(e.target.value);
-
   const handleChangepassowrd = (e) =>setPassord(e.target.value);
 
   const input = [

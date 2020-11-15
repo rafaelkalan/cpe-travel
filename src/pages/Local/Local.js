@@ -6,6 +6,7 @@ import BoxImages from '../../components/BoxImages';
 import BoxText from '../../components/BoxText';
 import BoxInfo from '../../components/BoxInfo';
 import BoxItinerario from '../../components/BoxItinerario'; 
+import BoxPrice from '../../components/BoxPrice/BoxPrice';
 
 
 function Local(){
@@ -18,6 +19,7 @@ function Local(){
         </BoxText>
         <BoxItinerario>            
         </BoxItinerario>
+        <BoxPrice></BoxPrice>
         <BoxInfo>            
         </BoxInfo>
         <Footer></Footer>
