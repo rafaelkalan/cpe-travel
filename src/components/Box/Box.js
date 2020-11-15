@@ -53,7 +53,7 @@ function Box({
       const existUser = users.filter((item) => item.email === userEmail);
       if (existUser.length !== 0) {
         if (existUser[0].password === userPassword) history.push('/');
-        else alert('Senha incorreta!');
+        else alert('Informações incorretas!');
       } else {
         alert('Usuário não cadastrado!');
       }
