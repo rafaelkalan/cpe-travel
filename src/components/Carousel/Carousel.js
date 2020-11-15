@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Carousel from 'react-bootstrap/Carousel';
-import { images } from '../../constantes/Images';
+
 import './Carousel.css';
 
-function SliderCarousel() {
+function SliderCarousel({ images }) {
   const [show, setShow] = useState('hidden');
+
   const getPrevArrowIcon = () => (
     <div className="divPrevArrow">
       <IoIosArrowBack
@@ -35,7 +36,7 @@ function SliderCarousel() {
         images.map((fotos) => (
           <Carousel.Item
             key={fotos.key}
-            interval={3000000}
+            interval={3000}
           >
             <div className="imageCarousel" style={{ backgroundImage: `url(${fotos.carousel})` }} />
           </Carousel.Item>

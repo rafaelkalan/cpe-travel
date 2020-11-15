@@ -2,7 +2,7 @@ import React from 'react';
 import { BiSearchAlt2 } from 'react-icons/all';
 import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar({ handleChange }) {
   return (
     <div className="SearchBar">
       <div className="envolvelupa">
@@ -11,6 +11,7 @@ function SearchBar() {
       <input
         className="imputSearch"
         placeholder="Digite o local de Destino"
+        onChange={(e) => handleChange(e)}
       />
     </div>
   );
