@@ -55,7 +55,7 @@ function Home() {
   const handleConfirm = () => {
     const existEmail = users.filter((item) => item.email === email);
     const existPassword = users.filter((item) => item.password === password);
-    if ((existEmail.lenght !== 0) && (existPassword.length !== 0)) {
+    if ((existEmail.length !== 0) && (existPassword.length !== 0)) {
       if (existEmail[0].admin) history.push('cadastro-local');
       else alert('Informações incorretas!');
     } else alert('Informações incorretas!');
