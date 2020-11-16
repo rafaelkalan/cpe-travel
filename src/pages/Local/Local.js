@@ -1,5 +1,4 @@
 import React from 'react';
-import './Local.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BoxImages from '../../components/BoxImages';
@@ -10,7 +9,7 @@ import BoxItinerario from '../../components/BoxItinerario';
 
 function Local({ local, images }) {
   let lugar = 0;
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < images.length; i += 1) {
     if (local === images[i].key) {
       lugar = images[i];
     }
@@ -21,7 +20,7 @@ function Local({ local, images }) {
       <BoxImages foto={lugar} />
       <BoxText texto={lugar} />
       <BoxItinerario itinerario={lugar} />
-      <BoxPrice></BoxPrice>
+      <BoxPrice />
       <BoxInfo inf={lugar} />
       <Footer />
 

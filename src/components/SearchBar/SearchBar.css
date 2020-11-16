@@ -10,7 +10,7 @@
     width: 100%;
     
 }
-.imputSearch {
+.inputSearch {
     font-size:24px;
     max-width: 650px;
     width: 100%;
@@ -22,7 +22,6 @@
     background-color:rgba(196, 196, 196, 0.0) ;
 }
 .lupa {
-        
     width: 40px;
     height: 40px;
     color:rgba(0, 0, 0, 0.7);   

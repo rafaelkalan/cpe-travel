@@ -6,13 +6,13 @@ import { BiBed, BiMenu } from 'react-icons/bi';
 import { RiSuitcaseLine } from 'react-icons/ri';
 import { FiFileText, FiLogIn, FiFilePlus } from 'react-icons/fi';
 import {
-  Drawer, List, ListItem, ListItemText,
+  Drawer, List, ListItem, ListItemText, Button,
 } from '@material-ui/core';
-import Button from '../Button';
+import MyButton from '../Button';
 import Logo from '../Logo';
 import './Header.css';
 
-function BurgerMenu() {
+function BurgerMenu(setAdmin) {
   const [open, setOpen] = useState(false);
   const history = useHistory();
   const headerItens = [
@@ -41,11 +41,6 @@ function BurgerMenu() {
       path: '/login',
       text: 'Login',
     },
-    {
-      icon: <FiFilePlus className="icons" />,
-      path: '/cadastro-local',
-      text: 'Cadastro de Local',
-    },
 
   ];
   return (
@@ -65,13 +60,21 @@ function BurgerMenu() {
               </ListItemText>
             </ListItem>
           ))}
+          <ListItem className="burgerListItem" onClick={() => setAdmin(true)}>
+            <IconContext.Provider value={{ color: 'white' }}>
+              <FiFilePlus />
+            </IconContext.Provider>
+            <ListItemText className="burgerText">
+              Cadastro de Local
+            </ListItemText>
+          </ListItem>
         </List>
       </Drawer>
     </div>
   );
 }
 
-function Header() {
+function Header({ setAdmin }) {
   const headerItens = [
     {
       icon: <TiPlaneOutline className="icons" />,
@@ -88,11 +91,6 @@ function Header() {
       path: '/',
       text: 'Pacotes',
     },
-    {
-      icon: <FiFilePlus className="icons" />,
-      path: '/cadastro-local',
-      text: 'Cadastro de Local',
-    },
   ];
   const margin = '0px 20px 0px 0px';
   const history = useHistory();
@@ -106,15 +104,26 @@ function Header() {
         {headerItens.map((item) => (
           <div className="divButton" key={item.text}>
             {item.icon}
-            <Button configMargin={margin} page={item.path}>{item.text}</Button>
+            <MyButton configMargin={margin} page={item.path}>{item.text}</MyButton>
           </div>
         ))}
+        <div className="divButton">
+          <FiFilePlus className="icons" />
+          <Button
+            onClick={() => setAdmin(true)}
+            style={{
+              fontSize: '15px', color: 'white', fontFamily: 'inherit', outline: 'none',
+            }}
+          >
+            Cadastro de Local
+          </Button>
+        </div>
       </div>
-      {BurgerMenu()}
+      {BurgerMenu(setAdmin)}
       <div className="rightContainer">
-        <Button configMargin="0px 5px 0px 0px" page="/cadastro">Cadastre-se</Button>
+        <MyButton configMargin="0px 5px 0px 0px" page="/cadastro">Cadastre-se</MyButton>
         <p className="bar">|</p>
-        <Button configMargin="0px 0px 0px 5px" page="/login">Entrar</Button>
+        <MyButton configMargin="0px 0px 0px 5px" page="/login">Entrar</MyButton>
       </div>
     </div>
   );

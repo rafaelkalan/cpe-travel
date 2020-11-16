@@ -9,9 +9,10 @@ function SearchBar({ handleChange }) {
         <BiSearchAlt2 className="lupa" />
       </div>
       <input
-        className="imputSearch"
+        className="inputSearch"
         placeholder="Digite o local de Destino"
         onChange={(e) => handleChange(e)}
+        type="text"
       />
     </div>
   );
